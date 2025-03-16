@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    
+    width: 100%;
+    overflow-x: hidden;
+    min-height: 100vh;
+    background: url("assests/1.jpg") center ;
+    background-size: cover;
+    background-position: top center;
+    padding: 50px 5%;
+    
+}
+/* Container */
+.container {
+    width: 100%;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+/* Date & Time Styling */
+#current-date-time {
+    font-size: 16px;
+    color: white; /* White text color */
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Light background for contrast */
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #ffcc00; 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .navbar a{
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        transition: .5s;
+    }
+}
+.home{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    
+    padding: 20px 5% 50px;
+    gap: 20px;
+    color: #fff;
+
+
+}
+.home-detail h1{
+    font-size: 55px;
+    line-height: 1;
+}
+.home-detail h2{
+    font-size: 32px;
+}
+
+.home-detail p{
+    margin: 10px 0 20px;
+}
+.home-detail .download-social{
+    display: flex;
+    align-items: bottom;
+}
+.btn{
+    display: inline-block;
+    padding: 10px 30px;
+    background: #fff;
+    border: 2px solid #fff;
+    border-radius: 40px;
+    box-shadow: 0 0 10px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+
+}
+.btn:hover{
+    background: transparent;
+    box-shadow: none;
+    color: #fff;
+}
+.home-detail .social-icons{
+    margin-left: 20px;
+
+}
+.home-detail .social-icons a{
+    display: inline-flex;
+    padding: 8px;
+    border: 2px solid #fff;
+border-radius: 50%;
+font-size: 20px;
+color: #fff;
+text-decoration: none;
+margin: 0 8px;
+transition: .5s;
+}
+
+.home-detail .social-icons a:hover{
+    background : #fff;
+    box-shadow: 0 0 10px #fff;
+    color:#333;
+
+
+
+}
+.home-img .img-box{
+    position: relative;
+    width: 28vw;
+    height: 28vw;
+    border: 2px solid #fff;
+    border-radius:50% ;
+    box-shadow: 0 0 20px #fff;
+    overflow: hidden;
+
+}
+.home-img .img-box img{
+    position: absolute;
+    top:30px;
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    background: rgba(255,255,255,.1);
+
+}
+/* Contact Section */
+.contact {
+    padding: 80px 5%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    margin-top: 50px;
+}
+
+.contact h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Contact Form */
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ffcc00;
+    border-radius: 5px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+#contact-form input::placeholder,
+#contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#contact-form textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* Submit Button */
+#contact-form .btn {
+    width: 100%;
+    padding: 12px;
+    background: #ffcc00;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#contact-form .btn:hover {
+    background: transparent;
+    border: 2px solid #ffcc00;
+    color: #ffcc00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact {
+        padding: 60px 5%;
+    }
+
+    #contact-form {
+        width: 100%;
+    }
+}
