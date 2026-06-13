@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Komal Kushwaha — Data Analyst</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0D1B2A;
+  --navy2:#152538;
+  --teal:#00C9B8;
+  --teal-dim:#009E90;
+  --amber:#F5A623;
+  --slate:#8FA4B8;
+  --light:#E8EFF6;
+  --white:#F0F4FF;
+  --card:#16283C;
+  --card2:#1C3149;
+  --border:#243d57;
+  --text:#CBD8E5;
+}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--white);font-family:'Inter',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(13,27,42,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 2rem}
+.nav-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--teal);letter-spacing:-0.02em}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{font-size:0.85rem;font-weight:500;color:var(--slate);text-decoration:none;letter-spacing:0.04em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--teal)}
+
+#hero{min-height:92vh;display:flex;align-items:center;justify-content:center;padding:4rem 2rem;position:relative;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:48px 48px;opacity:0.18}
+.hero-inner{position:relative;z-index:1;max-width:780px;text-align:center}
+.hero-badge{display:inline-block;background:rgba(0,201,184,0.12);border:1px solid rgba(0,201,184,0.35);color:var(--teal);font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:0.35rem 1rem;border-radius:2rem;margin-bottom:1.5rem}
+.hero-name{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.6rem,6vw,4.2rem);font-weight:700;letter-spacing:-0.03em;line-height:1.1;color:var(--white);margin-bottom:0.75rem}
+.hero-name span{color:var(--teal)}
+.hero-role{font-family:'Space Grotesk',sans-serif;font-size:clamp(1rem,2.5vw,1.35rem);font-weight:500;color:var(--slate);margin-bottom:2rem;min-height:2rem}
+#typed-text{color:var(--amber)}
+.cursor{display:inline-block;width:2px;height:1.1em;background:var(--amber);vertical-align:middle;animation:blink 1s step-end infinite;margin-left:2px}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.hero-desc{font-size:1rem;color:var(--text);max-width:580px;margin:0 auto 2.5rem;line-height:1.8}
+.hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{display:inline-block;background:var(--teal);color:var(--navy);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.9rem;padding:0.75rem 1.75rem;border-radius:6px;text-decoration:none;letter-spacing:0.02em;transition:background 0.2s,transform 0.15s}
+.btn-primary:hover{background:#00b5a6;transform:translateY(-1px)}
+.btn-outline{display:inline-block;border:1.5px solid var(--border);color:var(--slate);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.9rem;padding:0.75rem 1.75rem;border-radius:6px;text-decoration:none;letter-spacing:0.02em;transition:border-color 0.2s,color 0.2s}
+.btn-outline:hover{border-color:var(--teal);color:var(--teal)}
+
+section{padding:5rem 2rem}
+.section-inner{max-width:1000px;margin:0 auto}
+.section-label{font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:0.5rem}
+.section-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;letter-spacing:-0.02em;color:var(--white);margin-bottom:3rem}
+.section-title span{color:var(--teal)}
+section:nth-child(even){background:var(--navy2)}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.about-text p{color:var(--text);margin-bottom:1rem;font-size:0.97rem;line-height:1.8}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.25rem;text-align:center}
+.stat-num{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;color:var(--teal);line-height:1}
+.stat-label{font-size:0.8rem;color:var(--slate);margin-top:0.3rem;text-transform:uppercase;letter-spacing:0.06em}
+
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem}
+.skill-cat{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.5rem}
+.skill-cat-title{font-family:'Space Grotesk',sans-serif;font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--amber);margin-bottom:1rem}
+.skill-tag{display:inline-block;background:rgba(0,201,184,0.08);border:1px solid rgba(0,201,184,0.2);color:var(--light);font-size:0.78rem;font-weight:500;padding:0.3rem 0.7rem;border-radius:4px;margin:0.2rem 0.2rem 0.2rem 0}
+
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.proj-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.75rem;display:flex;flex-direction:column;transition:border-color 0.2s,transform 0.2s}
+.proj-card:hover{border-color:var(--teal);transform:translateY(-3px)}
+.proj-icon{width:42px;height:42px;border-radius:8px;background:rgba(0,201,184,0.12);display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:1rem}
+.proj-title{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:600;color:var(--white);margin-bottom:0.5rem;line-height:1.3}
+.proj-desc{font-size:0.88rem;color:var(--text);flex:1;margin-bottom:1.25rem;line-height:1.7}
+.proj-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1.25rem}
+.proj-tag{font-size:0.72rem;font-weight:600;background:rgba(245,166,35,0.1);border:1px solid rgba(245,166,35,0.25);color:var(--amber);padding:0.2rem 0.55rem;border-radius:3px;letter-spacing:0.04em}
+.proj-link{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.82rem;font-weight:600;color:var(--teal);text-decoration:none;transition:gap 0.15s}
+.proj-link:hover{gap:0.65rem}
+
+.exp-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:1.5rem}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.75rem;margin-bottom:1.25rem}
+.exp-role{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:700;color:var(--white)}
+.exp-company{font-size:0.9rem;color:var(--teal);font-weight:500;margin-top:0.2rem}
+.exp-date{font-size:0.8rem;color:var(--slate);background:var(--card2);border:1px solid var(--border);padding:0.3rem 0.8rem;border-radius:20px;white-space:nowrap}
+.exp-list{list-style:none;padding:0}
+.exp-list li{font-size:0.9rem;color:var(--text);padding:0.4rem 0 0.4rem 1.25rem;position:relative;line-height:1.7}
+.exp-list li::before{content:'▸';position:absolute;left:0;color:var(--teal);font-size:0.75rem;top:0.5rem}
+
+.edu-card{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--teal);border-radius:0 10px 10px 0;padding:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.edu-name{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;color:var(--white)}
+.edu-deg{font-size:0.9rem;color:var(--text);margin-top:0.25rem}
+.edu-right{text-align:right}
+.edu-cgpa{font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:var(--teal)}
+.edu-year{font-size:0.8rem;color:var(--slate);margin-top:0.2rem}
+
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.cert-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.25rem;display:flex;align-items:flex-start;gap:0.85rem}
+.cert-icon{width:36px;height:36px;border-radius:8px;background:rgba(245,166,35,0.1);border:1px solid rgba(245,166,35,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem}
+.cert-name{font-size:0.88rem;font-weight:600;color:var(--white);line-height:1.3}
+.cert-org{font-size:0.78rem;color:var(--slate);margin-top:0.25rem}
+
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.contact-info{display:flex;flex-direction:column;gap:1.25rem}
+.contact-item{display:flex;align-items:center;gap:1rem}
+.contact-item-icon{width:42px;height:42px;border-radius:8px;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.contact-item-label{font-size:0.78rem;color:var(--slate);text-transform:uppercase;letter-spacing:0.06em}
+.contact-item-val{font-size:0.92rem;color:var(--white);font-weight:500}
+.contact-item-val a{color:var(--teal);text-decoration:none}
+.contact-form{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:2rem;display:flex;flex-direction:column;gap:1rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-group{display:flex;flex-direction:column;gap:0.35rem}
+.form-group label{font-size:0.78rem;font-weight:600;color:var(--slate);text-transform:uppercase;letter-spacing:0.06em}
+.form-group input,.form-group textarea{background:var(--navy);border:1px solid var(--border);border-radius:6px;padding:0.7rem 0.9rem;font-size:0.92rem;color:var(--white);font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s;resize:none}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--teal)}
+.form-group input::placeholder,.form-group textarea::placeholder{color:var(--slate);opacity:0.6}
+.form-submit{background:var(--teal);color:var(--navy);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.92rem;border:none;border-radius:6px;padding:0.8rem;cursor:pointer;transition:background 0.2s,letter-spacing:0.03em}
+.form-submit:hover{background:#00b5a6}
+.form-submit:disabled{opacity:0.6;cursor:not-allowed}
+.form-success{display:none;text-align:center;padding:2rem 1rem}
+.form-success-icon{font-size:2.5rem;margin-bottom:0.75rem}
+.form-success-title{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:700;color:var(--teal);margin-bottom:0.5rem}
+.form-success-msg{font-size:0.9rem;color:var(--text);line-height:1.7}
+
+footer{background:var(--navy);border-top:1px solid var(--border);padding:2rem;text-align:center;font-size:0.82rem;color:var(--slate)}
+footer span{color:var(--teal)}
+
+@media(max-width:680px){
+  .about-grid,.contact-grid,.form-row{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .stat-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">KK.</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">Open to Opportunities</div>
+    <h1 class="hero-name">Komal <span>Kushwaha</span></h1>
+    <p class="hero-role"><span id="typed-text"></span><span class="cursor"></span></p>
+    <p class="hero-desc">Entry-level Data Analyst skilled in SQL, Python, Power BI, and Google Looker Studio — turning complex datasets into clear, actionable business insights.</p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn-primary">View Projects</a>
+      <a href="#contact" class="btn-outline">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-inner">
+    <p class="section-label">About Me</p>
+    <h2 class="section-title">Data-driven by <span>design</span></h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I'm a recent B.Tech Computer Science graduate from LNCT Group of Colleges, Bhopal,  passionate about transforming raw data into meaningful stories that drive business decisions.</p>
+        <p>My experience spans sales analytics, healthcare risk modeling, and social media performance — gained through a Data Analyst internship at NullClass and self-driven projects using real-world datasets.</p>
+        <p>I enjoy building end-to-end analytics pipelines: from data cleaning and EDA to interactive dashboards and KPI reporting that help stakeholders act faster and smarter.</p>
+      </div>
+      <div class="stat-grid">
+        <div class="stat-card"><div class="stat-num">5,764+</div><div class="stat-label">Sales Records Analyzed</div></div>
+        <div class="stat-card"><div class="stat-num">90%+</div><div class="stat-label">ML Model Accuracy</div></div>
+        <div class="stat-card"><div class="stat-num">10+</div><div class="stat-label">KPI Dashboards Built</div></div>
+        <div class="stat-card"><div class="stat-num">5</div><div class="stat-label">Analytics Projects</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-inner">
+    <p class="section-label">Technical Skills</p>
+    <h2 class="section-title">Tools &amp; <span>Technologies</span></h2>
+    <div class="skills-grid">
+      <div class="skill-cat">
+        <div class="skill-cat-title">Languages &amp; Query</div>
+        <span class="skill-tag">SQL</span><span class="skill-tag">Python</span><span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span><span class="skill-tag">Matplotlib</span><span class="skill-tag">CTEs</span><span class="skill-tag">Window Functions</span>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title">BI &amp; Visualization</div>
+        <span class="skill-tag">Power BI</span><span class="skill-tag">DAX</span><span class="skill-tag">Power Query</span><span class="skill-tag">Google Looker Studio</span><span class="skill-tag">Tableau</span><span class="skill-tag">Excel</span><span class="skill-tag">Pivot Tables</span>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title">Databases &amp; Tools</div>
+        <span class="skill-tag">MySQL</span><span class="skill-tag">Jupyter Notebook</span><span class="skill-tag">Git</span><span class="skill-tag">GitHub</span><span class="skill-tag">VS Code</span><span class="skill-tag">Streamlit</span>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title">Analytics</div>
+        <span class="skill-tag">EDA</span><span class="skill-tag">Data Cleaning</span><span class="skill-tag">KPI Reporting</span><span class="skill-tag">Statistical Analysis</span><span class="skill-tag">Data Modeling</span><span class="skill-tag">Trend Analysis</span><span class="skill-tag">ML (Random Forest)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-inner">
+    <p class="section-label">Portfolio</p>
+    <h2 class="section-title">Featured <span>Projects</span></h2>
+    <div class="projects-grid">
+      <div class="proj-card">
+        <div class="proj-icon">🏥</div>
+        <div class="proj-title">AI-Powered Healthcare Risk &amp; Cost Analytics</div>
+        <div class="proj-desc">End-to-end healthcare analytics solution analyzing 200+ patient records to understand healthcare costs, disease patterns, and patient risk levels using ML and interactive dashboards.</div>
+        <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">SQL</span><span class="proj-tag">Power BI</span><span class="proj-tag">Streamlit</span><span class="proj-tag">Random Forest</span></div>
+        <a class="proj-link" href="https://github.com/Komal123Kushwaha/AI-Powered-Healthcare-Risk-Cost-Analytics-System" target="_blank">View on GitHub →</a>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon">📈</div>
+        <div class="proj-title">Advanced Sales Analysis — Google Looker Studio</div>
+        <div class="proj-desc">Full sales analytics pipeline across 5,764 records, 3,998 customers, and 3,155 products spanning 15 categories — with interactive Looker Studio dashboard featuring 8+ KPIs.</div>
+        <div class="proj-tags"><span class="proj-tag">SQL</span><span class="proj-tag">Python</span><span class="proj-tag">Looker Studio</span><span class="proj-tag">EDA</span></div>
+        <a class="proj-link" href="https://github.com/Komal123Kushwaha/Advanced_sales_analysis_using_Google_Looker" target="_blank">View on GitHub →</a>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon">🐦</div>
+        <div class="proj-title">Twitter Analytics Dashboard — Power BI</div>
+        <div class="proj-desc">Social media analytics across 1,000+ posts using Power BI with 10+ KPIs, DAX measures, and 8+ visualizations to identify top content and track audience engagement trends.</div>
+        <div class="proj-tags"><span class="proj-tag">Power BI</span><span class="proj-tag">DAX</span><span class="proj-tag">Power Query</span><span class="proj-tag">Social Analytics</span></div>
+        <a class="proj-link" href="https://github.com/Komal123Kushwaha/Twitter-Analytics-Dashboard" target="_blank">View on GitHub →</a>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon">🛒</div>
+        <div class="proj-title">Customer Behaviour Analysis</div>
+        <div class="proj-desc">End-to-end analytics project uncovering customer shopping patterns, purchase frequencies, and revenue behaviour using Python EDA, SQL queries, and an interactive Power BI dashboard.</div>
+        <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">SQL</span><span class="proj-tag">Power BI</span><span class="proj-tag">Pandas</span><span class="proj-tag">Seaborn</span></div>
+        <a class="proj-link" href="https://github.com/Komal123Kushwaha/customer_behaviour_analysis" target="_blank">View on GitHub →</a>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon">📋</div>
+        <div class="proj-title">Data Professional Survey Dashboard</div>
+        <div class="proj-desc">Interactive Power BI dashboard analyzing survey data from data professionals — covering salary by role, programming language preferences, job satisfaction, work-life balance, and demographic trends.</div>
+        <div class="proj-tags"><span class="proj-tag">Power BI</span><span class="proj-tag">DAX</span><span class="proj-tag">Power Query</span><span class="proj-tag">Excel</span></div>
+        <a class="proj-link" href="https://github.com/Komal123Kushwaha/Data-Professional-Survey-Dashboard" target="_blank">View on GitHub →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="section-inner">
+    <p class="section-label">Work History</p>
+    <h2 class="section-title">Professional <span>Experience</span></h2>
+    <div class="exp-card">
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">Data Analyst Intern</div>
+          <div class="exp-company">NullClass · Remote, India</div>
+        </div>
+        <div class="exp-date">Dec 2025 – Jan 2026</div>
+      </div>
+      <ul class="exp-list">
+        <li>Analyzed and transformed datasets containing 5,764+ sales records, 3,998+ customers, and 3,155+ products using SQL, Excel, Python, and Power BI to uncover business trends.</li>
+        <li>Developed optimized SQL queries using joins, aggregations, and data validation to clean and prepare analysis-ready datasets from multiple relational tables.</li>
+        <li>Built interactive Power BI and Google Looker Studio dashboards with 8+ KPIs, dynamic filters, and drill-down capabilities to monitor sales performance and customer behavior.</li>
+        <li>Conducted EDA to identify Top 5 best-selling products, Top 20 declining products, and year-over-year category trends across 15 product categories.</li>
+        <li>Automated reporting workflows and presented actionable insights through visual reports, improving stakeholder access to business performance data.</li>
+      </ul>
+    </div>
+    <div style="margin-top:2.5rem">
+      <p class="section-label" style="margin-bottom:0.5rem">Education</p>
+      <div class="edu-card">
+        <div>
+          <div class="edu-name">LNCT Group of Colleges, Bhopal</div>
+          <div class="edu-deg">B.Tech in Computer Science and Engineering</div>
+        </div>
+        <div class="edu-right">
+          <div class="edu-cgpa">7.68 / 10</div>
+          <div class="edu-year">2022 – 2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="section-inner">
+    <p class="section-label">Credentials</p>
+    <h2 class="section-title">Certifications &amp; <span>Training</span></h2>
+    <div class="cert-grid">
+      <div class="cert-card"><div class="cert-icon">🏛</div><div><div class="cert-name">Data Analytics Essentials</div><div class="cert-org">Cisco Networking Academy</div></div></div>
+      <div class="cert-card"><div class="cert-icon">🎓</div><div><div class="cert-name">Introduction to MySQL</div><div class="cert-org">Udemy</div></div></div>
+      <div class="cert-card"><div class="cert-icon">💼</div><div><div class="cert-name">Data Labeling Job Simulation</div><div class="cert-org">Forage</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-inner">
+    <p class="section-label">Get in Touch</p>
+    <h2 class="section-title">Let's <span>Connect</span></h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p style="color:var(--text);font-size:0.95rem;margin-bottom:0.5rem">I'm actively looking for data analyst roles. Whether you have an opportunity, a project idea, or just want to talk data — I'd love to hear from you.</p>
+        <div class="contact-item"><div class="contact-item-icon">📧</div><div><div class="contact-item-label">Email</div><div class="contact-item-val"><a href="mailto:komalkushwaha1476@gmail.com">komalkushwaha1476@gmail.com</a></div></div></div>
+        <div class="contact-item"><div class="contact-item-icon">📱</div><div><div class="contact-item-label">Phone</div><div class="contact-item-val">+91 9161469614</div></div></div>
+        <div class="contact-item"><div class="contact-item-icon">💼</div><div><div class="contact-item-label">LinkedIn</div><div class="contact-item-val"><a href="https://linkedin.com/in/komal-kush19" target="_blank">linkedin.com/in/komal-kush19</a></div></div></div>
+        <div class="contact-item"><div class="contact-item-icon">🐙</div><div><div class="contact-item-label">GitHub</div><div class="contact-item-val"><a href="https://github.com/komal123kushwaha" target="_blank">github.com/komal123kushwaha</a></div></div></div>
+      </div>
+
+      <!-- Contact Form — powered by Formspree -->
+      <div class="contact-form" id="contact-form-wrapper">
+        <div id="form-fields">
+          <div class="form-row">
+            <div class="form-group"><label for="f-name">Name</label><input type="text" id="f-name" placeholder="Your name" required/></div>
+            <div class="form-group"><label for="f-email">Email</label><input type="email" id="f-email" placeholder="your@email.com" required/></div>
+          </div>
+          <div class="form-group"><label for="f-subject">Subject</label><input type="text" id="f-subject" placeholder="Job opportunity / Collaboration..."/></div>
+          <div class="form-group"><label for="f-msg">Message</label><textarea id="f-msg" rows="5" placeholder="Tell me about the opportunity or project..." required></textarea></div>
+          <button class="form-submit" id="form-submit-btn" onclick="submitForm()">Send Message</button>
+        </div>
+        <div class="form-success" id="form-success">
+          <div class="form-success-icon">✅</div>
+          <div class="form-success-title">Thank you for contacting me!</div>
+          <div class="form-success-msg">Your message has been received.<br>I will respond within 24–48 hours.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Designed &amp; built with purpose · <span>Komal Kushwaha</span> · 2025</p>
+</footer>
+
+<script>
+/* ---------- Typing animation ---------- */
+const roles=["Data Analyst","SQL Developer","Power BI Developer","Python Analyst","BI Dashboard Designer"];
+let ri=0,ci=0,deleting=false;
+const el=document.getElementById('typed-text');
+function type(){
+  const word=roles[ri];
+  if(!deleting){el.textContent=word.slice(0,ci+1);ci++;if(ci===word.length){deleting=true;setTimeout(type,1600);return;}}
+  else{el.textContent=word.slice(0,ci-1);ci--;if(ci===0){deleting=false;ri=(ri+1)%roles.length;}}
+  setTimeout(type,deleting?60:95);
+}
+type();
+
+/* ---------- Contact form — Formspree ---------- */
+async function submitForm() {
+  const name    = document.getElementById('f-name').value.trim();
+  const email   = document.getElementById('f-email').value.trim();
+  const subject = document.getElementById('f-subject').value.trim();
+  const message = document.getElementById('f-msg').value.trim();
+
+  if (!name || !email || !message) {
+    alert('Please fill in Name, Email, and Message.');
+    return;
+  }
+
+  const btn = document.getElementById('form-submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  try {
+    const response = await fetch('https://formspree.io/f/xvznvwjp', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, subject, message })
+    });
+
+    if (response.ok) {
+      // Hide form fields, show success message
+      document.getElementById('form-fields').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    } else {
+      const data = await response.json();
+      const errMsg = (data.errors && data.errors.map(e => e.message).join(', ')) || 'Something went wrong. Please try again.';
+      alert(errMsg);
+      btn.disabled = false;
+      btn.textContent = 'Send Message';
+    }
+  } catch (err) {
+    alert('Network error. Please check your connection and try again.');
+    btn.disabled = false;
+    btn.textContent = 'Send Message';
+  }
+}
+</script>
+</body>
+</html>
