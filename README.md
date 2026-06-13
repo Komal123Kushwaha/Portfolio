@@ -2,7 +2,7 @@
  
 A personal portfolio website built with HTML, CSS, and vanilla JavaScript — showcasing my data analytics projects, skills, and experience.
  
-🔗 **Live Site:** [your-site-url.netlify.app](https://your-site-url.netlify.app) *(update after hosting)*
+🔗 **Live Site:** (https://komal123kushwaha.github.io/Portfolio/) 
  
 ---
  
